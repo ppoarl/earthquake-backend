@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const PORT = 3000;
 
-const serviceAccount = require('./serviceAccountKey.json');
+const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT_KEY);
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
